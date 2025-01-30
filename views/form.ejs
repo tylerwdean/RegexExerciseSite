@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Form</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <h1>Tyler's Regular Expression Fun</h1>
+    </header>
+
+    <main>
+
+        <form action="/" method="POST">
+            <fieldset>
+                <legend>Don't worry, it's safe</legend>
+                <br>
+                <% if(errors['name']) { %>
+                    <p class="notification"><%= errors['name'] %></p>
+                <% } %>
+                <label>Full name (First Middle Last): <input type="text" name="name" id="name" value = "<%= answers['name']%>"></label>
+                <br>
+                <% if(errors['address']) { %>
+                    <p class="notification"><%= errors['address'] %></p>
+                <% } %>
+                <label>Street Address (### Street st.): <input type="text" name="address" id="address" value = "<%= answers['address']%>"></label>
+                <br>
+                <% if(errors['bday']) { %>
+                    <p class="notification"><%= errors['bday'] %></p>
+                <% } %>
+                <label>Birthday (MM-DD-YYYY): <input type="text" name="bday" id="bday" value = "<%= answers['bday']%>"></label>
+                <br>
+                <% if(errors['ssn']) { %>
+                    <p class="notification"><%= errors['ssn'] %></p>
+                <% } %>
+                <label>SSN (###-##-####): <input type="password" name="ssn" id="ssn" value = "<%= answers['ssn']%>"></label>
+                <br>
+                <% if(errors['phone']) { %>
+                    <p class="notification"><%= errors['phone'] %></p>
+                <% } %>
+                <label>Phone Number (###)-###-####: <input type="text" name="phone" id="phone" value = "<%= answers['phone']%>"></label>
+                <br>
+                <% if(errors['credit']) { %>
+                    <p class="notification"><%= errors['credit'] %></p>
+                <% } %>
+                <label>Credit Card Number (8-19 digits): <input type="password" name="credit" id="credit" value = "<%= answers['credit']%>"></label>
+                <br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
